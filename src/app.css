@@ -1,0 +1,35 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+html {
+    background-color: #0F0F0F
+}
+
+[contenteditable=true]:empty:before{
+    content: attr(placeholder);
+    /*Opacity lowered for placeholder */
+    opacity: 0.5;
+    pointer-events: none;
+    display: block; /* For Firefox */
+}
+
+.highlight-text {
+    position: relative;
+    color: white;
+    background-color: blue;
+    padding: 1px;
+    display: inline-block;
+    overflow: hidden;
+    clip-path: inset(0 100% 0 0);
+    animation: wipe 1s forwards;
+}
+
+@keyframes wipe {
+    0% {
+        clip-path: inset(0 100% 0 0);
+    }
+    100% {
+        clip-path: inset(0 0 0 0);
+    }
+}
